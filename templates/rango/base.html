@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load rango_template_tags %}
 <html>
     <head>
         <title>
@@ -21,6 +22,11 @@
                 <li><a href="{% url 'rango:about' %}">About</a></li>
                 <li><a href="{% url 'rango:index' %}">Index</a></li>
             </ul>
+        </div>
+        <div>
+            {% block sidebar_block %}
+            {% get_category_list category%}
+            {% endblock %}
         </div>
     </body>
 </html>
